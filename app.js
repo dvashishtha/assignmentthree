@@ -29,14 +29,13 @@ function NarrowItDownController(MenuSearchService) {
     if (menu.searchTerm) {
       menu.found = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
     } else {
+      menu.found = [];
       menu.message = "Nothing found";
     }
   };
+
   menu.notNeeded = function(itemIndex) {
-    console.log(menu.found);
-    console.log(itemIndex);
     menu.found.splice(itemIndex, 1);
-    console.log(menu.found);
   };
 
 }
